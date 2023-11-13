@@ -12,7 +12,7 @@ public class Icons{
 	public Icons(WebDriver driver) {
 		this.driver=driver;
 	}
-	
+	//go to dog
 	By dogIcon=By.xpath("//area[@alt='Dogs']");
 	By catIcon=By.xpath("//area[@alt='Cats']");
 	By reptileIcon=By.xpath("//area[@alt='Reptiles']");

@@ -10,12 +10,7 @@ WebDriver driver;
 	public MyAccount(WebDriver driver) {
 		this.driver=driver;
 	}
-//	   By usernameField = By.name("username");
-//	    By passwordField = By.name("password");
-//	    By loginButton = By.name("signon");
-//	    By BackHome = By.linkText("Return to Main Menu");
-	    //By signin = By.xpath("//a[normalize-space()='Sign In']");
-	    //By register = By.xpath("//a[normalize-space()='Register Now!']");
+//go to my account
 	    
 	    By Account=By.xpath("//a[normalize-space()='My Account']");
 	    By NewPassword = By.xpath("//input[@name='password']");

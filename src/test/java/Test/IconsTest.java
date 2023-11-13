@@ -50,6 +50,8 @@ public class IconsTest {
 	  icons.gotoReptileIcon().click();
 	  icons.goBacktoHome().click();
 	  
+	  //close browser
+	  
 	  driver.close();
 	  
   }

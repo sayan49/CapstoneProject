@@ -64,7 +64,7 @@ public class LoginTestwithFakePassword {
 	  	extent.flush();
 		
 
-	  
+	//close browser  
 	  
   }
   @AfterTest

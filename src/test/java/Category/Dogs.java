@@ -13,6 +13,7 @@ WebDriver driver;
 	}
 	
 	By dog = By.xpath("//img[@src='../images/sm_dogs.gif']");
+	
 	By bulldog = By.xpath("//a[normalize-space()='K9-BD-01']");
 	By Poodle = By.xpath("//a[normalize-space()='K9-PO-02']");
 	By Dalmation = By.xpath("//a[normalize-space()='K9-DL-01']");
@@ -41,7 +42,7 @@ WebDriver driver;
 	By AddToCartByListForGR= By.xpath("//a[normalize-space()='Add to Cart']");
 	
 	By  AddToCartFromCart=By.xpath("//a[normalize-space()='Add to Cart']");
-	//By GoToDog=By.xpath("//img[@src='../images/sm_dogs.gif']");
+	
 	
 	public WebElement gotoDog() {
 		return driver.findElement(dog);
