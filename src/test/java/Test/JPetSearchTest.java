@@ -24,6 +24,7 @@ import Registration.SignIn;
 
 public class JPetSearchTest {
 
+	
 	WebDriver driver;
 	SignIn signIn;
     JPetSearch search;
