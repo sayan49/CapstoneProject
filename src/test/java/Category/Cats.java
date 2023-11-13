@@ -13,7 +13,7 @@ public class Cats {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+	//a
 	@FindBy(xpath="//*[@id=\"QuickLinks\"]/a[4]/img") WebElement cats;
 	@FindBy(xpath="//*[@id=\"Catalog\"]/table/tbody/tr[2]/td[1]/a") WebElement manx;
 	@FindBy(xpath="//*[@id=\"Catalog\"]/table/tbody/tr[2]/td[1]/a") WebElement taillessmanx;

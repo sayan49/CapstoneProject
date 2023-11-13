@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class Screenshot {
-	
+	//aa
 	WebDriver driver;
 	public Screenshot(WebDriver driver){
  this.driver = driver;
