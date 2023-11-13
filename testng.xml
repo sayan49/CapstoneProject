@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <suite-files>
+	  <suite-file path="XMLs/addtocartTest.xml"></suite-file>
+	  <suite-file path="XMLs/TransactionTest.xml"></suite-file>
+	  <suite-file path="XMLs/BasicSignInSignutTest.xml"></suite-file>
+	  <suite-file path="XMLs/FullwebsiteTest.xml"></suite-file>
+	  <suite-file path="XMLs/IconTest.xml"></suite-file>
+	  <suite-file path="XMLs/JPetSearch.xml"></suite-file>
+	  <suite-file path="XMLs/LoginTestwithFakePassword.xml"></suite-file>
+	  <suite-file path="XMLs/LoginTestwithWrongUsername.xml"></suite-file>
+	  <suite-file path="XMLs/MyAccountTest.xml"></suite-file>
+	  <suite-file path="XMLs/RegistrationTest.xml"></suite-file>
+	  <suite-file path="XMLs/RegistrationWithExistingUserId.xml"></suite-file>
+	  <suite-file path="XMLs/TestOutOfStock.xml"></suite-file>
+	  <suite-file path="XMLs/TestPropertyLogIn.xml"></suite-file>
+	  <suite-file path="XMLs/TestPropertyRegistration.xml"></suite-file>
+	  <suite-file path="XMLs/TransactionTest.xml"></suite-file>
+	  
+  </suite-files>
+</suite>
