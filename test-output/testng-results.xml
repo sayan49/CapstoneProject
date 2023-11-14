@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-13T20:08:46 UTC" name="Default suite" finished-at="2023-11-13T20:09:27 UTC" duration-ms="41905">
+  <suite started-at="2023-11-14T11:12:11 UTC" name="Default suite" finished-at="2023-11-14T11:12:28 UTC" duration-ms="16905">
     <groups>
     </groups>
-    <test started-at="2023-11-13T20:08:46 UTC" name="Default test" finished-at="2023-11-13T20:09:27 UTC" duration-ms="41905">
-      <class name="projectDemo.FullWebsiteTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:projectDemo.FullWebsiteTest@428640fa]" started-at="2023-11-13T20:08:46 UTC" name="setup" finished-at="2023-11-13T20:08:51 UTC" duration-ms="5497" status="PASS">
+    <test started-at="2023-11-14T11:12:11 UTC" name="Default test" finished-at="2023-11-14T11:12:28 UTC" duration-ms="16905">
+      <class name="projectDemo.AddPets">
+        <test-method is-config="true" signature="setup()[pri:0, instance:projectDemo.AddPets@d9345cd]" started-at="2023-11-14T11:12:11 UTC" name="setup" finished-at="2023-11-14T11:12:15 UTC" duration-ms="3504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="addToCartTest()[pri:0, instance:projectDemo.FullWebsiteTest@428640fa]" started-at="2023-11-13T20:08:51 UTC" name="addToCartTest" finished-at="2023-11-13T20:09:27 UTC" duration-ms="36334" status="PASS">
+        <test-method signature="addPets()[pri:0, instance:projectDemo.AddPets@d9345cd]" started-at="2023-11-14T11:12:15 UTC" name="addPets" finished-at="2023-11-14T11:12:28 UTC" duration-ms="13157" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToCartTest -->
-      </class> <!-- projectDemo.FullWebsiteTest -->
+        </test-method> <!-- addPets -->
+        <test-method is-config="true" signature="close()[pri:0, instance:projectDemo.AddPets@d9345cd]" started-at="2023-11-14T11:12:28 UTC" name="close" finished-at="2023-11-14T11:12:28 UTC" duration-ms="184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- projectDemo.AddPets -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
