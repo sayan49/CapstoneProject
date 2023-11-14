@@ -53,25 +53,39 @@ public class AddPets {
 
 	@Test
 	public void addPets() throws InterruptedException, IOException {
+		
+		//Sign in to the website
 		signIn.signIn().click();
 		signIn.enterUsername().sendKeys("sayan2567");
 		signIn.enterPassword().clear();
 		signIn.enterPassword().sendKeys("testpassword1");
 		signIn.clickLogin().click();
 		wait.waits(1000);
+		
+		//search fish from search box
 		search.searchResult().sendKeys("Fish", Keys.ENTER);
 		wait.fixWait();
+		
+		// add fish
 		driver.findElement(By.xpath("//a[normalize-space()='Fresh Water fish from China']")).click();
 		wait.waits(800);
 		driver.findElement(By.xpath("//a[normalize-space()='EST-21']")).click();
 		wait.waits(500);
+		
+		//adding to cart
 		add.addToCart();
 		wait.waits(200);
+		
+		//goto home by icon
 		icons.goBacktoHome().click();
+		
+		//goto bird through icon
 		icons.gotoBirdIcon().click();
 		birds.gotoAmazonParrot().click();
 		birds.gotoAdultMaleAmazonParrot().click();
 		add.addToCart();
+		
+		//goto to all pages
 		icons.goBacktoHome().click();
 		icons.goBacktoHome().click();
 		icons.gotoDogIcon().click();
@@ -84,8 +98,12 @@ public class AddPets {
 		cats.gotoManx().click();
 		cats.gotoTaillessManx().click();
 		add.addToCart();
+		
+		//updating cart
 		update.updateCart();
 		WebElement bill = driver.findElement(By.xpath("//*[@id=\"Cart\"]/form/table"));
+		
+		//taking screenshot
 		screenshot.elementScreenshot(bill, "aa");
 	}
 
