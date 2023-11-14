@@ -1,6 +1,7 @@
 package projectDemo;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,7 +34,7 @@ public class TestPropertyRegistration {
         Properties properties = new Properties();
         try {
             // Load the properties from the test.properties file
-            FileInputStream input = new FileInputStream("/home/ubuntu/Downloads/JPetStoreProject/test.properties");
+            FileInputStream input = new FileInputStream("/home/ubuntu/Desktop/project/My vlab projects/CapstoneProject/test.properties");
             properties.load(input);
         } catch (IOException e) {
             e.printStackTrace();

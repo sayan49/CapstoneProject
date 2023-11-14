@@ -1,5 +1,7 @@
 package projectDemo;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
@@ -113,7 +115,7 @@ public class CheckAccountUpdationTest {
 		String errorMsg1 = driver.findElement(By.xpath("//input[@name='account.firstName']")).getAttribute("value");
 		System.out.println(errorMsg1);
 
-		assertEquals(errorMsg1, "sayan");
+		AssertJUnit.assertEquals(errorMsg1, "sayan");
 
 		// extend report
 		test.log(Status.FAIL, "Test case fail because after update data remain same as previous");

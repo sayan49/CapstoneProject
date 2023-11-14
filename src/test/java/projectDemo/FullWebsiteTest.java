@@ -2,13 +2,15 @@ package projectDemo;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -87,7 +89,7 @@ public class FullWebsiteTest {
 		signIn.registerNow().click();
 		test.log(Status.INFO, "Register now button clicked");
 		Thread.sleep(1000);
-		registration.enterUsername().sendKeys("sayankjhgf9100h");
+		registration.enterUsername().sendKeys("sayankljhgf900h");
 		registration.enterPassword().sendKeys("testpassword1");
 		registration.enterRepeatPassword().sendKeys("testpassword1");
 		registration.enterFirstName().sendKeys("Johne");
