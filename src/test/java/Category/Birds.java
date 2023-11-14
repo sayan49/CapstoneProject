@@ -14,6 +14,7 @@ public class Birds {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//locators using page factory
 	@FindBy(xpath="//*[@id=\"QuickLinks\"]/a[5]/img") WebElement birds;
 	@FindBy(xpath="//*[@id=\"Catalog\"]/table/tbody/tr[2]/td[1]/a") WebElement amazonparrot;
 	@FindBy(xpath="//*[@id=\"Catalog\"]/table/tbody/tr[2]/td[1]/a") WebElement adultmaleamazonparrot;
