@@ -9,7 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import Category.Birds;
 import Category.Cats;
 import CommonFiles.AddToCart;
@@ -22,6 +25,7 @@ import CommonFiles.Wait;
 import Registration.SignIn;
 
 public class AddPets {
+	//Creating Objects
 	WebDriver driver;
 	SignIn signIn;
 	JPetSearch search;
@@ -39,6 +43,7 @@ public class AddPets {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://petstore.octoperf.com/actions/Catalog.action");
+		//initialinsing Objects
 		search = new JPetSearch(driver);
 		screenshot = new Screenshot(driver);
 		add = new AddToCart(driver);
@@ -53,12 +58,18 @@ public class AddPets {
 
 	@Test
 	public void addPets() throws InterruptedException, IOException {
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
+	  	ExtentReports extent = new ExtentReports();
+	  	extent.attachReporter(htmlReporter);
+	  	ExtentTest test = extent.createTest("Adding pets by different methods");
+		//signIn
 		signIn.signIn().click();
 		signIn.enterUsername().sendKeys("sayan2567");
 		signIn.enterPassword().clear();
 		signIn.enterPassword().sendKeys("testpassword1");
 		signIn.clickLogin().click();
 		wait.waits(1000);
+		//adding pets from search bar
 		search.searchResult().sendKeys("Fish", Keys.ENTER);
 		wait.fixWait();
 		driver.findElement(By.xpath("//a[normalize-space()='Fresh Water fish from China']")).click();
@@ -67,6 +78,7 @@ public class AddPets {
 		wait.waits(500);
 		add.addToCart();
 		wait.waits(200);
+		//adding pets from icons
 		icons.goBacktoHome().click();
 		icons.gotoBirdIcon().click();
 		birds.gotoAmazonParrot().click();
@@ -86,13 +98,12 @@ public class AddPets {
 		add.addToCart();
 		update.updateCart();
 		WebElement bill = driver.findElement(By.xpath("//*[@id=\"Cart\"]/form/table"));
-		screenshot.elementScreenshot(bill, "aa");
+		screenshot.elementScreenshot(bill, "aa"); //elements screenshot
+		test.log(Status.INFO, "Test case run successfully");
+      	extent.flush();
 	}
-
 	@AfterMethod
 	public void close() {
-		
-		driver.close();
-
+		driver.close(); //close browser
 	}
 }
