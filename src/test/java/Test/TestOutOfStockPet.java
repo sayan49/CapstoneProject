@@ -41,7 +41,7 @@ public class TestOutOfStockPet {
 		
 		
 		@Test
-		public void addToCartTest() throws IOException {
+		public void addToCartTest() throws IOException, InterruptedException {
 			signIn.signIn().click();
 			signIn.enterUsername().sendKeys("sayan2567");;
 			signIn.enterPassword().clear();

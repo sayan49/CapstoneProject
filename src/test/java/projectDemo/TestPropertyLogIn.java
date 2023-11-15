@@ -6,6 +6,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import CommonFiles.Wait;
 import Registration.SignIn;
 import java.util.Properties;
 import java.io.FileInputStream;
@@ -14,9 +16,10 @@ import java.io.IOException;
 public class TestPropertyLogIn {
 	//Creating Objects
 	SignIn login;
+	Wait wait;
 	
 	@Test
-    public void Main() throws IOException {
+    public void Main() throws IOException, InterruptedException {
 		
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
 	  	ExtentReports extent = new ExtentReports();
@@ -25,7 +28,7 @@ public class TestPropertyLogIn {
 		
         Properties properties = new Properties();
         // Load the properties from the test.properties file
-        FileInputStream input = new FileInputStream("/home/ubuntu/Downloads/JPetStoreProject/test.properties");
+        FileInputStream input = new FileInputStream("/home/ubuntu/git/CapstoneProject/test.properties");
         properties.load(input);
         // Extract properties for Selenium configuration
         String url = properties.getProperty("url");
@@ -36,12 +39,15 @@ public class TestPropertyLogIn {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         login = new SignIn(driver);
+        wait = new Wait();
         // Navigate to the signin page
         driver.get(url);
         login.signIn().click();
         login.enterUsername().sendKeys(username);
+        wait.waits(1000);
         login.enterPassword().clear();
         login.enterPassword().sendKeys(password);
+        wait.waits(1000);
         login.clickLogin().click();
         //close the browser
         driver.close();

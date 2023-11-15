@@ -2,16 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-14T12:28:23 UTC" name="Default suite" finished-at="2023-11-14T12:28:31 UTC" duration-ms="8402">
+  <suite started-at="2023-11-15T04:16:14 UTC" name="Default suite" finished-at="2023-11-15T04:17:01 UTC" duration-ms="47167">
     <groups>
     </groups>
-    <test started-at="2023-11-14T12:28:23 UTC" name="Default test" finished-at="2023-11-14T12:28:31 UTC" duration-ms="8402">
-      <class name="projectDemo.TestPropertyRegistration">
-        <test-method signature="Main()[pri:0, instance:projectDemo.TestPropertyRegistration@d5b810e]" started-at="2023-11-14T12:28:23 UTC" name="Main" finished-at="2023-11-14T12:28:31 UTC" duration-ms="8349" status="PASS">
+    <test started-at="2023-11-15T04:16:14 UTC" name="Default test" finished-at="2023-11-15T04:17:01 UTC" duration-ms="47167">
+      <class name="projectDemo.FullWebsiteTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:projectDemo.FullWebsiteTest@4c1909a3]" started-at="2023-11-15T04:16:14 UTC" name="setup" finished-at="2023-11-15T04:16:18 UTC" duration-ms="4506" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Main -->
-      </class> <!-- projectDemo.TestPropertyRegistration -->
+        </test-method> <!-- setup -->
+        <test-method signature="addToCartTest()[pri:0, instance:projectDemo.FullWebsiteTest@4c1909a3]" started-at="2023-11-15T04:16:18 UTC" name="addToCartTest" finished-at="2023-11-15T04:17:01 UTC" duration-ms="42610" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCartTest -->
+      </class> <!-- projectDemo.FullWebsiteTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

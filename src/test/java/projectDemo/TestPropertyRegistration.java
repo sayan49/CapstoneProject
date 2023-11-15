@@ -8,6 +8,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import CommonFiles.Wait;
 import Registration.Registration;
 import Registration.SignIn;
 import java.util.Properties;
@@ -18,8 +20,9 @@ public class TestPropertyRegistration {
 	//Creating Objects
 	SignIn login;
 	Registration registrationPage;
+	Wait wait;
 	@Test
-    public void Main() throws IOException {
+    public void Main() throws IOException, InterruptedException {
 	
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
 	  	ExtentReports extent = new ExtentReports();
@@ -27,12 +30,15 @@ public class TestPropertyRegistration {
 	  	ExtentTest test = extent.createTest("Verifying Registration successfully done by test.properties file", "Checking Registration successfully done by test.properties file");
 		
         Properties properties = new Properties();
+        
         // Load the properties from the test.properties file
-        FileInputStream input = new FileInputStream("/home/ubuntu/Downloads/JPetStoreProject/test.properties");
+        FileInputStream input = new FileInputStream("/home/ubuntu/git/CapstoneProject/test.properties");
         properties.load(input);
+        
         // Extract properties for Selenium configuration
         String url = properties.getProperty("url");
         String browser = properties.getProperty("browser");
+        
         // Extract properties for registration form data
         String username = properties.getProperty("username");
         String password = properties.getProperty("password");
@@ -47,20 +53,25 @@ public class TestPropertyRegistration {
         String state = properties.getProperty("state");
         String zip = properties.getProperty("zip");
         String country = properties.getProperty("country");
+        
         // Set up WebDriver based on Selenium configuration
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url);
         login = new SignIn(driver);
+        wait = new Wait();
         registrationPage = new Registration(driver);
         login.signIn().click();
         login.registerNow().click();
+        
         // Fill out the registration form
         driver.findElement(By.name("username")).sendKeys(username);
         driver.findElement(By.name("password")).sendKeys(password);
+        wait.waits(1000);
         driver.findElement(By.name("repeatedPassword")).sendKeys(repeatPassword);
         driver.findElement(By.name("account.firstName")).sendKeys(firstName);
         driver.findElement(By.name("account.lastName")).sendKeys(lastName);
+        wait.waits(1000);
         driver.findElement(By.name("account.email")).sendKeys(email);
         driver.findElement(By.name("account.phone")).sendKeys(phone);
         driver.findElement(By.name("account.address1")).sendKeys(address1);
@@ -69,7 +80,9 @@ public class TestPropertyRegistration {
         driver.findElement(By.name("account.state")).sendKeys(state);
         driver.findElement(By.name("account.zip")).sendKeys(zip);
         driver.findElement(By.name("account.country")).sendKeys(country);
+        wait.waits(1000);
         registrationPage.submitRegistration().click();
+        
         // Perform other actions, submit the form, and verify results as needed
         // Close the WebDriver
         driver.close();

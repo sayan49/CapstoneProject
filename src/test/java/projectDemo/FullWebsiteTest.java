@@ -73,6 +73,7 @@ public class FullWebsiteTest {
 	  	ExtentReports extent = new ExtentReports();
 	  	extent.attachReporter(htmlReporter);
 	  	ExtentTest test = extent.createTest("Verifying Full website test", "Checking Full website test");
+	  	
 		//create a account on JPetStore website
 		signIn.signIn().click();
 		test.log(Status.INFO, "Sign button clicked");
@@ -80,31 +81,33 @@ public class FullWebsiteTest {
 		signIn.registerNow().click();
 		test.log(Status.INFO, "Register now button clicked");
 		wait.waits(1000);
-		registration.enterUsername().sendKeys("sayankjhgf9100h");
+		registration.enterUsername().sendKeys("ankit1");
 		registration.enterPassword().sendKeys("testpassword1");
 		registration.enterRepeatPassword().sendKeys("testpassword1");
-		registration.enterFirstName().sendKeys("Johne");
-		registration.enterLastName().sendKeys("Doeo");
-		registration.enterEmail().sendKeys("test@example1.com");
-        registration.enterPhone().sendKeys("1234567898");
+		registration.enterFirstName().sendKeys("Ankit");
+		registration.enterLastName().sendKeys("Chowdhury");
+		registration.enterEmail().sendKeys("ankit@gmail.com");
+        registration.enterPhone().sendKeys("9888567623");
         registration.enterAddress1().sendKeys("123 Street");
         registration.enterAddress2().sendKeys("Apt 102");
-        registration.enterCity().sendKeys("New York city");
-        registration.enterState().sendKeys("NY");
-        registration.enterZip().sendKeys("10002");
-        registration.enterCountry().sendKeys("USA");
+        registration.enterCity().sendKeys("kolkata");
+        registration.enterState().sendKeys("West Bengal");
+        registration.enterZip().sendKeys("700078");
+        registration.enterCountry().sendKeys("India");
         registration.submitRegistration().click();
         test.log(Status.INFO, "New registration successful");
         wait.waits(1000);
+        
 		//Signin to the JPetStore website
 		signIn.signIn().click();
 		test.log(Status.INFO, "Signin button clicked");
-		signIn.enterUsername().sendKeys("sayankjhgf59000h");;
+		signIn.enterUsername().sendKeys("ankit1");;
 		signIn.enterPassword().clear();
 		signIn.enterPassword().sendKeys("testpassword1");
 		signIn.clickLogin().click();
 		test.log(Status.INFO, "Login successful");
 		wait.waits(1000);
+		
 		//add fish items
 		fishs.gotoFish().click();
 		fishs.gotoGoldfish().click();
@@ -117,6 +120,7 @@ public class FullWebsiteTest {
 		add.addToCart();
 		test.log(Status.INFO, "Fish added to cart");
 		wait.waits(1000);
+		
 		//add dog item
 		dogs.gotoDog().click();
 		dogs.gotoBulldog().click();
@@ -124,6 +128,7 @@ public class FullWebsiteTest {
 		add.addToCart();
 		test.log(Status.INFO, "Dog added to cart");
 		wait.waits(1000);
+		
 		//add cat 
 		cats.gotoCats().click();
 		cats.gotoPersian().click();
@@ -131,6 +136,7 @@ public class FullWebsiteTest {
 		add.addToCart();
 		test.log(Status.INFO, "Cat added to cart");
 		wait.waits(1000);
+		
 		//add reptiles
 		reptiles.gotoReptile().click();
 		reptiles.gotoRattleSnake().click();
@@ -138,6 +144,7 @@ public class FullWebsiteTest {
 		add.addToCart();
 		test.log(Status.INFO, "Reptiles added to cart");
 		wait.waits(1000);
+		
 		//add birds
 		birds.gotoBird().click();
 		birds.gotoAmazonParrot().click();
@@ -145,30 +152,37 @@ public class FullWebsiteTest {
 		add.addToCart();
 		test.log(Status.INFO, "Bird added to cart");
 		wait.waits(1000);
+		
 		//proceed to checkout
 		common.proceedToCheckout().click();
 		test.log(Status.INFO, "Proceed to checkout button clicked");
 		wait.waits(1000);
+		
 		//Transaction details chech
 		transaction.transaction();
 		test.log(Status.INFO, "Transaction details change");
 		wait.waits(1000);
+		
 		//continue button click
 		common.continueButton().click();
 		test.log(Status.INFO, "Continue button clicked");
 		wait.waits(1000);
+		
 		//confirm button click
 		common.confirmButton().click();
 		test.log(Status.INFO, "confirm button clicked");
 		wait.waits(1000);
+		
 		//take screenshot
 		screenshot.fullScreenShot("invoice");
 		test.log(Status.INFO, "Screenshot taken sucessfully");
 		wait.waits(1000);
+		
 		//click on signout button
 		signOut.signOut().click();
 		test.log(Status.INFO, "Signout successfully");
 		wait.waits(1000);
+		
 		//Close the browser
 		driver.close();
 		test.log(Status.INFO, "Close the browser sucessfully");

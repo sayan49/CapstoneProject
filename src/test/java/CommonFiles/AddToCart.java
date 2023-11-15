@@ -13,10 +13,11 @@ import org.openqa.selenium.support.PageFactory;
 	@FindBy(xpath="//*[@id=\"Catalog\"]/table/tbody/tr[5]/td") WebElement check;
 	@FindBy(xpath="//a[normalize-space()='Add to Cart']") WebElement addtocart;
 	@FindBy(xpath="//*[@id=\"Cart\"]/form/table/tbody/tr[td//text()[contains(.,'false')]]/td[8]/a") WebElement remove;
-	public void addToCart() {
+	public void addToCart() throws InterruptedException {
  String isavailable = check.getText();
  addtocart.click();
  System.out.println(isavailable);
+ Thread.sleep(1000);
  if(isavailable.equals("Back ordered.")) {remove.click();}
 	}
 }
